@@ -1,4 +1,4 @@
-#define _SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS
+//#define _SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS
 #include "stdafx.h"
 #include<iostream>
 #include<fstream>
@@ -17,14 +17,14 @@
 
 using namespace std;
 
-string oper_name = " "; // наименование операции
-						// выполняем рассчет выражения пользователя, возвращаем результат.
+string oper_name = " "; // РЅР°РёРјРµРЅРѕРІР°РЅРёРµ РѕРїРµСЂР°С†РёРё
+						// РІС‹РїРѕР»РЅСЏРµРј СЂР°СЃСЃС‡РµС‚ РІС‹СЂР°Р¶РµРЅРёСЏ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ, РІРѕР·РІСЂР°С‰Р°РµРј СЂРµР·СѓР»СЊС‚Р°С‚.
 double operation(double x, double y, char z) {
 	switch (z) {
-	case '+': oper_name = "Сумма"; return(x + y);
-	case '-': oper_name = "Разность"; return(x - y);
-	case '*': oper_name = "Произведение"; return(x * y);
-	case '/': oper_name = "Деление"; return(x / y);
+	case '+': oper_name = "РЎСѓРјРјР°"; return(x + y);
+	case '-': oper_name = "Р Р°Р·РЅРѕСЃС‚СЊ"; return(x - y);
+	case '*': oper_name = "РџСЂРѕРёР·РІРµРґРµРЅРёРµ"; return(x * y);
+	case '/': oper_name = "Р”РµР»РµРЅРёРµ"; return(x / y);
 	}
 }
 
@@ -33,35 +33,46 @@ int main()
 	setlocale(LC_CTYPE, "RUS");
 	setlocale(LC_ALL, "");
 
-	char oper = ' '; // знак математической операции
-	string user_value1 = " "; // первое значение пользователя
-	string user_value2 = " "; // второе значение пользователя
-	double oper_trans1 = 0; // записываем значение первого операнда после перевода
-	double oper_trans2 = 0; // записываем значение первого операнда после перевода
-
+	char oper = ' '; // Р·РЅР°Рє РјР°С‚РµРјР°С‚РёС‡РµСЃРєРѕР№ РѕРїРµСЂР°С†РёРё
+	string user_value1 = " "; // РїРµСЂРІРѕРµ Р·РЅР°С‡РµРЅРёРµ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
+	string user_value2 = " "; // РІС‚РѕСЂРѕРµ Р·РЅР°С‡РµРЅРёРµ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
+	double oper_trans1 = 0; // Р·Р°РїРёСЃС‹РІР°РµРј Р·РЅР°С‡РµРЅРёРµ РїРµСЂРІРѕРіРѕ РѕРїРµСЂР°РЅРґР° РїРѕСЃР»Рµ РїРµСЂРµРІРѕРґР°
+	double oper_trans2 = 0; // Р·Р°РїРёСЃС‹РІР°РµРј Р·РЅР°С‡РµРЅРёРµ РїРµСЂРІРѕРіРѕ РѕРїРµСЂР°РЅРґР° РїРѕСЃР»Рµ РїРµСЂРµРІРѕРґР°
+	int flag = 2;
+	int flag2 = 2;
 	vector<string> digits = { "zero", "one", "two", "three", "four", "five", "six", "seven","eight", "nine" };
 
-	cout << "введите 2 операнда и оператор" << endl;
+	cout << "РІРІРµРґРёС‚Рµ 2 РѕРїРµСЂР°РЅРґР° Рё РѕРїРµСЂР°С‚РѕСЂ" << endl;
 	cin >> user_value1 >> user_value2 >> oper;
 
 	for (int i = 0; i < digits.size(); ++i) {
 		if (user_value1 == digits[i]) {
 			oper_trans1 = i;
+			int flag = 1;
+		}
+		else {
+			int flag = 0;
 		}
 		if (user_value2 == digits[i]) {
 			oper_trans2 = i;
+			int flag2 = 1;
+		}
+		else {
+			int flag2 = 0;
 		}
 	}
-	if (oper_trans1 == 0) {
-		oper_trans1 = std::stod(user_value1);
-	}
-	if (oper_trans2 == 0) {
-		oper_trans2 = std::stod(user_value2);
-	}
+	for (int i = 0; i < digits.size(); ++i) {
 
+	}
+	if (flag == 0) {
+		oper_trans1 = stod(user_value1);
+	}
+	if (flag == 0) {
+		oper_trans2 = stod(user_value2);
+	}
 	double result = operation(oper_trans1, oper_trans2, oper);
 
-	cout << oper_name << " " << user_value1 << " и " << user_value2 << " " << "равно " << result << endl;
+	cout << oper_name << " " << user_value1 << " Рё " << user_value2 << " " << "СЂР°РІРЅРѕ " << result << endl;
 
 	system("pause");
 }
