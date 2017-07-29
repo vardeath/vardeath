@@ -1,0 +1,11 @@
+﻿  ConsoleApplication7.cpp
+ConsoleApplication7.cpp(1): warning C4603: _SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS: макрос не определен или определение изменилось после использования предкомпилированного заголовка
+  ConsoleApplication7.cpp(1): note: Добавление макроопределения в предкомпилированный заголовок вместо определения его здесь
+  ConsoleApplication7.cpp(2): note: использование предварительно скомпилированного заголовка
+ConsoleApplication7.cpp(47): warning C4018: <: несоответствие типов со знаком и без знака
+  Создание кода
+  0 of 195 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    14 functions had inline decision re-evaluated but remain unchanged
+  Создание кода завершено
+  ConsoleApplication7.vcxproj -> C:\Users\User\Documents\Visual Studio 2017\Projects\ConsoleApplication7\Release\ConsoleApplication7.exe
