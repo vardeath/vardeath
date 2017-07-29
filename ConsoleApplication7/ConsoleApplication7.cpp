@@ -65,7 +65,7 @@ int main()
 	if (flag == 0) {
 		oper_trans1 = stod(user_value1);
 	}
-	if (flag == 0) {
+	if (flag2 == 0) {
 		oper_trans2 = stod(user_value2);
 	}
 	double result = operation(oper_trans1, oper_trans2, oper);
