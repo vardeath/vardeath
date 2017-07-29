@@ -18,7 +18,7 @@
 using namespace std;
 
 string oper_name = " "; // наименование операции
-						// выполняем рассчет выражения пользователя, возвращаем результат.
+// выполняем рассчет выражения пользователя, возвращаем результат.
 double operation(double x, double y, char z) {
 	switch (z) {
 	case '+': oper_name = "Сумма"; return(x + y);
@@ -61,9 +61,7 @@ int main()
 			int flag2 = 0;
 		}
 	}
-	for (int i = 0; i < digits.size(); ++i) {
 
-	}
 	if (flag == 0) {
 		oper_trans1 = stod(user_value1);
 	}
